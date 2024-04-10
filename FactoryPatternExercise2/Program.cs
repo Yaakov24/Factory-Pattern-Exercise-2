@@ -2,9 +2,13 @@
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("What Database would you like to use?");
+            var input = Console.ReadLine();
+          var type = DataAccessFactory.GetDataAccessType(input);
+            type.LoadData();
+            type.SaveData();
         }
     }
 }
